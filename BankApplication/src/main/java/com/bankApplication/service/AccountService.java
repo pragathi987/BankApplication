@@ -3,6 +3,7 @@ package com.bankApplication.service;
 import java.util.List;
 
 import com.bankApplication.DTO.AccountDTO;
+import com.bankApplication.DTO.FundTransferDTO;
 
 public interface AccountService {
 	
@@ -17,5 +18,7 @@ public interface AccountService {
 	List<AccountDTO> getAllAccounts();
 	
 	void deleteAccount(Long account_Id);
+	
+	void FundTransfer(FundTransferDTO fundTransferDto);
 
 }

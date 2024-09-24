@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bankApplication.DTO.AccountDTO;
+import com.bankApplication.DTO.FundTransferDTO;
 import com.bankApplication.service.AccountService;
 
 @RestController
@@ -72,6 +73,13 @@ public class AccountController {
 	public ResponseEntity<String> deleteAccount(@PathVariable Long account_Id){
 		accountService.deleteAccount(account_Id);
 		return ResponseEntity.ok("account Deleted");
+	}
+	
+	//Build transfer rest api
+	@PostMapping("/transfer")
+	public ResponseEntity<String> fundTransfer(@RequestBody FundTransferDTO fundTransferDto){
+		accountService.FundTransfer(fundTransferDto);
+		return ResponseEntity.ok("Transfer Successful");
 	}
 	
 }
